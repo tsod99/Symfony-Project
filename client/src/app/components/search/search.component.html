@@ -1,0 +1,16 @@
+<div  style='margin-top:5%; width:80%; margin-left:10%; margin-right: 10%;' class="row" *ngIf="this.error">
+    <h3>{{error}}</h3>
+</div>
+
+<div *ngIf="books?.length" class='row' style='margin-top:5%; width:80%; margin-left:10%; margin-right: 10%;'>
+    <div class='col-xl-2 col-md-2 col-sm-2 offset-sm-1' style='margin-top:20px' *ngFor="let book of books">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+            <h5 class="card-title text-center">{{book.title}}</h5>
+            <h5 class="card-title text-center">{{book.author}}</h5>
+            <p class="card-text">{{book.description}}</p>
+            <a  class="btn btn-primary text-center" routerLink="/book/{{book.id}}">View more</a>
+            </div>
+        </div>
+    </div>
+</div>

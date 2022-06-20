@@ -1,0 +1,26 @@
+<div class="navbar navbar-expand bg-primary navbar-dark" id="navbarResponsive">
+  <ul class="navbar-nav ml-auto">
+     <li class="nav-item active">
+        <a class="nav-link" routerLink="/books" *ngIf="isUserLoggedIn">All Books
+           <span class="sr-only"></span>
+        </a>
+     </li>
+     <li class="nav-item">
+        <a class="nav-link" routerLink="/adminPanel" *ngIf="isUserLoggedIn">create book</a>
+     </li>
+
+     <li class="nav-item">
+        <a class="nav-link" routerLink="/logout" *ngIf="isUserLoggedIn">Logout</a>
+     </li>
+     <li class="nav-item"  >
+      <a class="nav-link" routerLink="/login" *ngIf="!isUserLoggedIn == true">Login</a>
+   </li>
+  </ul>
+
+   <form class="d-flex" [formGroup]="formData" (ngSubmit)="onClickSearch(formData.value)" method="POST" *ngIf="isUserLoggedIn">
+      <input class="form-control me-2" type="search" placeholder="Search" formControlName='search' aria-label="Search">
+      <button class="btn btn-outline-light" type="submit">Search</button>
+   </form>
+</div>
+
+<router-outlet></router-outlet>

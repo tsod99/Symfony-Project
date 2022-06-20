@@ -1,0 +1,35 @@
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+       <div class="col-lg-12 text-center" style="padding-top: 20px;">
+          <div class="container box" style="margin-top: 10px; padding-left: 0px; padding-right: 0px;">
+             <div class="row">
+                <div class="col-12" style="text-align: center;">
+                                     <form [formGroup]="formData" (ngSubmit)="onClickSubmit(formData.value)" 
+                                           class="form-signin" method="POST">
+                                     <h2 class="form-signin-heading">Add a new book</h2>
+                                     <label for="title" class="sr-only">Title</label>
+                                     <input type="text" id="title" class="form-control" 
+                                           formControlName="title" placeholder="Title" required autofocus>
+                                     <label for="author" class="sr-only">Author</label>
+                                     <input type="text" id="author" class="form-control" 
+                                           formControlName="author" placeholder="author" required>
+                                           <label for="description" class="sr-only">Description</label>
+                                           <textarea  id="description" class="form-control" 
+                                                 formControlName="description" placeholder="description" required>  
+                                                 </textarea> 
+                                            <label for="review" class="sr-only">Review</label>
+                                            <textarea  id="review" class="form-control" 
+                                                 formControlName="review" placeholder="review" required>
+                                                 </textarea>         
+                                     <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+                                     </form>
+                </div>
+             </div>
+          </div>
+       </div>
+       <div class="alert alert-danger" role="alert" *ngIf="error">
+           Creating a book failed:  {{  error  }}
+         </div>
+    </div>
+ </div>
