@@ -13,4 +13,6 @@
 1.) CD to clinet (cd client) <br />
 2.) If you dont have installed angular, install it by this command globaly `npm install -g @angular/cli` <br />
 3.) to install node modules type `npm install` <br />
-4) and to server the applicaiton type `ng serve --open`
+4) and to server the applicaiton type `ng serve --open` <br />
+5.) login with ```admin@admin.com``` and password ```admin```
+
